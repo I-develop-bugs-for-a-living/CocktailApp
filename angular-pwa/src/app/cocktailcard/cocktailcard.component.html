@@ -1,0 +1,14 @@
+<div class="card">
+
+    <div class="card-header">
+        <h2 class="title">
+            {{item?.name}}
+        </h2>
+    </div>
+    <div class="card-body">
+        <p>Alcoholic: {{item?.alcoholic || '/'}}</p>
+        <p>Glas: {{item?.glass}}</p>
+        <p>Category: {{item?.category}}</p>
+        <button class="btn btn-default" (click)="moreInformation()">More</button>
+    </div>
+</div>
