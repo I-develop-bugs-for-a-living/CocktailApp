@@ -14,6 +14,7 @@ import { CocktailcardComponent } from './cocktailcard/cocktailcard.component';
 import { SearchComponent } from './search/search.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { CoverviewComponent } from './coverview/coverview.component';
 
 @NgModule({
    imports: [
@@ -36,7 +37,8 @@ import { environment } from '../environments/environment';
       GsearchComponent,
       IsearchComponent,
       CocktailcardComponent,
-      SearchComponent
+      SearchComponent,
+      CoverviewComponent
    ],
    providers: [],
    bootstrap: [

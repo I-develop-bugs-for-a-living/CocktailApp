@@ -9,6 +9,6 @@
         <p>Alcoholic: {{item?.alcoholic || '/'}}</p>
         <p>Glas: {{item?.glass}}</p>
         <p>Category: {{item?.category}}</p>
-        <button class="btn btn-default" (click)="moreInformation()">More</button>
+        <button class="btn btn-default" (click)="moreInformation(item?.id)">More</button>
     </div>
 </div>

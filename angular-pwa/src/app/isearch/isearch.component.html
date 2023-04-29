@@ -1,2 +1,19 @@
 <h1>Search for ingredients!</h1>
-<app-search [drinks]="drinks" (onSearchFor)="searchFor($event)"></app-search>
+<input type="text" class="form-control" placeholder="Search for ingredients" [(ngModel)]="searchText" (keyup)="searchIngredient()">
+<div class="button-container">
+    <div *ngFor="let g of availableIngredients">
+        <div style="margin: 10px;" *ngIf="searchText === '' || g.name.toLowerCase().includes(searchText.toLowerCase())">
+            <button style="width: 100%; margin: 5px;" class="btn btn-info" (click)="queryDrink(g.name)">{{ g.name }}</button>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div *ngFor="let d of drinks" class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
+
+        <app-cocktailcard [item]="d"></app-cocktailcard>
+    </div>
+    <div *ngIf="drinks.length === 0">
+        <h1>No drinks use that glass!</h1>
+    </div>
+</div>
