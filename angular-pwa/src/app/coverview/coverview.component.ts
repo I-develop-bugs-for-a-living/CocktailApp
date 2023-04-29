@@ -29,7 +29,16 @@ export class CoverviewComponent implements OnInit {
   }
 
   speak(): void {
-    this.text = this.drink.strInstructions;
+    let ingredientText = "To make this drink, you will need ";
+    for (let i = 0; i < this.ingredients.length; i++) {
+      const { ingredient, measure } = this.ingredients[i];
+      if (i === this.ingredients.length - 1) {
+        ingredientText += "and ";
+      }
+      ingredientText += `${ingredient}, `;
+    }
+    ingredientText += ". ";
+    this.text = "Today we are going to make a " + this.drink.strDrink + ". "  + ingredientText +"Instructions: " + this.drink.strInstructions + " You can serve this drink in a " + this.drink.strGlass;
     if (this.synth.speaking) {
       console.error('SpeechSynthesis is already speaking.');
       return;
@@ -69,7 +78,7 @@ export class CoverviewComponent implements OnInit {
             });
           }
         }
-        console.log(this.drink);
+        console.log(this.ingredients)
       })
     })
   }
