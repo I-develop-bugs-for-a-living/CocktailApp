@@ -10,7 +10,9 @@ import { Router } from '@angular/router';
 export class CocktailcardComponent implements OnInit {
   @Input() item: Cocktail | null = null;
 
-  constructor(private router:Router) { }
+  constructor(private router:Router) {
+
+   }
 
   ngOnInit(): void {
   }
@@ -18,5 +20,7 @@ export class CocktailcardComponent implements OnInit {
   moreInformation(id:any) {
     this.router.navigate(['c_overview', id])
   }
+
+
 
 }
