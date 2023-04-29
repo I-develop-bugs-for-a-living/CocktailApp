@@ -1,6 +1,6 @@
 <h1>Choose a glass!</h1>
 <div class="button-container">
-    <div style="width: 19%; margin: 5px;" *ngFor="let g of availableGlases">
+    <div style="margin: 5px;" *ngFor="let g of availableGlases">
         <button style="width: 100%" type="button" class="btn btn-info" (click)="queryDrink(g.name)">{{ g.name }}</button>
     </div>
 </div>

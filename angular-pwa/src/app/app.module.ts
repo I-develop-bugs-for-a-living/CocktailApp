@@ -12,6 +12,7 @@ import { GsearchComponent } from './gsearch/gsearch.component';
 import { IsearchComponent } from './isearch/isearch.component';
 import { CocktailcardComponent } from './cocktailcard/cocktailcard.component';
 import { SearchComponent } from './search/search.component';
+import { CoverviewComponent } from './coverview/coverview.component';
 
 @NgModule({
    imports: [
@@ -28,7 +29,8 @@ import { SearchComponent } from './search/search.component';
       GsearchComponent,
       IsearchComponent,
       CocktailcardComponent,
-      SearchComponent
+      SearchComponent,
+      CoverviewComponent
    ],
    providers: [],
    bootstrap: [

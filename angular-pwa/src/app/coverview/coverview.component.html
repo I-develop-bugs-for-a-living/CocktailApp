@@ -1,0 +1,40 @@
+<h1>{{drink?.strDrink}}</h1>
+
+<img src={{drink?.strDrinkThumb}} class="cocktail-img" alt="{{drink?.strDrink}}-Image">
+
+<div class="stats">
+  <h3 class="title">Stats</h3>
+
+  <div class="section">
+    <p class="attribute">Type: </p>
+    <p class="attribute2">{{drink?.strAlcoholic}}</p>  
+  </div>
+
+  <div class="section">
+    <p class="attribute">Glas: </p>
+    <p class="attribute2">{{drink?.strGlass}}</p>
+  </div>
+  
+  <div class="section">
+    <p class="attribute">Category: </p>
+    <p class="attribute2">{{drink?.strCategory}}</p>
+  </div>
+
+  <div>
+    <p class="attribute">Ingredients: </p>
+    <div class="ing-slider">
+      <div class="ing-box" *ngFor="let ingredient of ingredients">
+        {{ingredient.ingredient}}: {{ingredient.measure}}
+      </div>
+    </div>
+  </div>
+  
+  <div>
+    <p class="attribute">Instructions:</p>
+    <p>{{drink?.strInstructions}}</p>
+  </div>
+
+</div>
+
+
+

@@ -23,9 +23,8 @@ export class CsearchComponent implements OnInit {
       this.searchResults = this.searchResults.drinks
       this.drinks = [];
       for (let drink of this.searchResults) {
-        this.drinks.push({'name': drink.strDrink, 'alcoholic': drink.strAlcoholic, 'category': drink.strCategory, 'glass': drink.strGlass})
+        this.drinks.push({'id': drink.idDrink ,'name': drink.strDrink, 'alcoholic': drink.strAlcoholic, 'category': drink.strCategory, 'glass': drink.strGlass})
       }
-      console.log(this.drinks)
     })
   }
 
