@@ -57,9 +57,17 @@ export class CoverviewComponent implements OnInit {
 
   getEnglishVoice(): SpeechSynthesisVoice | null {
     const englishVoices = this.voices.filter(voice => voice.lang.startsWith('en'));
+    let englishVoiceNames = englishVoices.map(voice => voice.name);
+    console.log(englishVoiceNames);
+    if(englishVoiceNames.includes('Microsoft Susan - English (United Kingdom)')) {
+      return englishVoices[englishVoiceNames.indexOf('Microsoft Susan - English (United Kingdom)')];
+    } else if (englishVoiceNames.includes('Microsoft Libby Online (Natural) - English (United Kingdom)')) {
+      return englishVoices[englishVoiceNames.indexOf('Microsoft Libby Online (Natural) - English (United Kingdom)')];
+    }
+
     return englishVoices.length > 0 ? englishVoices[0] : null;
   }
-
+//['Microsoft Natasha Online (Natural) - English (Australia)', 'Microsoft William Online (Natural) - English (Australia)', 'Microsoft Clara Online (Natural) - English (Canada)', 'Microsoft Liam Online (Natural) - English (Canada)', 'Microsoft Sam Online (Natural) - English (Hongkong)', 'Microsoft Yan Online (Natural) - English (Hongkong)', 'Microsoft Neerja Online (Natural) - English (India) (Preview)', 'Microsoft Neerja Online (Natural) - English (India)', 'Microsoft Prabhat Online (Natural) - English (India)', 'Microsoft Connor Online (Natural) - English (Ireland)', 'Microsoft Emily Online (Natural) - English (Ireland)', 'Microsoft Asilia Online (Natural) - English (Kenya)', 'Microsoft Chilemba Online (Natural) - English (Kenya)', 'Microsoft Mitchell Online (Natural) - English (New Zealand)', 'Microsoft Molly Online (Natural) - English (New Zealand)', 'Microsoft Abeo Online (Natural) - English (Nigeria)', 'Microsoft Ezinne Online (Natural) - English (Nigeria)', 'Microsoft James Online (Natural) - English (Philippines)', 'Microsoft Rosa Online (Natural) - English (Philippines)', 'Microsoft Luna Online (Natural) - English (Singapore)', 'Microsoft Wayne Online (Natural) - English (Singapore)', 'Microsoft Leah Online (Natural) - English (South Africa)', 'Microsoft Luke Online (Natural) - English (South Africa)', 'Microsoft Elimu Online (Natural) - English (Tanzania)', 'Microsoft Imani Online (Natural) - English (Tanzania)', 'Microsoft Libby Online (Natural) - English (United Kingdom)', 'Microsoft Maisie Online (Natural) - English (United Kingdom)', 'Microsoft Ryan Online (Natural) - English (United Kingdom)', 'Microsoft Sonia Online (Natural) - English (United Kingdom)', 'Microsoft Thomas Online (Natural) - English (United Kingdom)', 'Microsoft Aria Online (Natural) - English (United States)', 'Microsoft Ana Online (Natural) - English (United States)', 'Microsoft Christopher Online (Natural) - English (United States)', 'Microsoft Eric Online (Natural) - English (United States)', 'Microsoft Guy Online (Natural) - English (United States)', 'Microsoft Jenny Online (Natural) - English (United States)', 'Microsoft Michelle Online (Natural) - English (United States)', 'Microsoft Roger Online (Natural) - English (United States)', 'Microsoft Steffan Online (Natural) - English (United States)']
 
 
 
